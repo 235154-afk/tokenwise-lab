@@ -1,0 +1,5 @@
+[build]
+  # Fetch Yarn on demand so the build works even where Yarn isn't preinstalled,
+  # and install from the lockfile before building.
+  command = "npx --yes yarn@1.22.22 install --frozen-lockfile --non-interactive && CI=false npx --yes yarn@1.22.22 run build"
+  publish = "build"
