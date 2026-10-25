@@ -63,7 +63,7 @@ export const networks = {
   97: {
     name: "BSC Testnet",
     storage: "0x085Ac70fbb039BC81B56aCDB047D8137bc71A136",
-    rpc: "https://data-seed-prebsc-2-s3.binance.org:8545",
+    rpc: "https://bsc-testnet-rpc.publicnode.com",
     chainId: 97,
     explorer: "https://testnet.bscscan.com/",
     color: "#CC9B00",

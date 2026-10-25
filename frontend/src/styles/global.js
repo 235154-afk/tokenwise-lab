@@ -353,32 +353,29 @@ export const Textarea = styled.textarea`
 `;
 
 export const button = styled.button`
-  background: ${({ secondary }) => (secondary ? "transparent" : "linear-gradient(135deg, var(--primary), var(--primary-dark))")};
-  border: ${({ secondary }) => (secondary ? "var(--primary)" : "transparent")} 0.125em solid;
-  font-weight: 700;
-  padding: 8px 22px;
-  border-radius: 20px;
-  color: ${({ secondary }) => (secondary ? "var(--primary)" : "#ffffff")};
-  box-shadow: ${({ secondary }) => (secondary ? "none" : "0 10px 25px -8px rgba(124, 58, 237, 0.55)")};
-  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, color 220ms ease;
-
-  ${({ fullWidth }) =>
-    fullWidth ? 'width: 100%;' : ''
+  && {
+    background: ${({ secondary }) => (secondary ? "#FFFFFF" : "linear-gradient(135deg,#8B5CF6,#4C1D95)")};
+    border: 1.5px solid ${({ secondary }) => (secondary ? "#C4B5FD" : "transparent")};
+    color: ${({ secondary }) => (secondary ? "#4C1D95" : "#FFFFFF")};
+    box-shadow: ${({ secondary }) => (secondary ? "none" : "0 10px 24px -10px rgba(124,58,237,.7)")};
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform .2s, border-color .2s;
+    ${({ fullWidth }) => (fullWidth ? "width: 100%;" : "")}
   }
-
-  :disabled {
-    background: transparent;
+  &&:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: #7C3AED;
+  }
+  &&:disabled {
+    background: #EDE7FF;
+    color: #8B80B3;
+    border: 1.5px solid #E3DAFB;
     box-shadow: none;
-    color: var(--disable);
-    border: var(--disable) 0.125em solid;
-    text-shadow: none;
-  }
-  :hover:not(:disabled) {
-    transform: translateY(-2px);
-    border: ${({ secondary }) => (secondary ? "var(--primary-dark)" : "transparent")} 0.125em solid;
-    background: ${({ secondary }) => (secondary ? "var(--secondary)" : "linear-gradient(135deg, var(--primary-dark), var(--primary))")};
-    color: ${({ secondary }) => (secondary ? "var(--primary-dark)" : "#ffffff")};
-    box-shadow: ${({ secondary }) => (secondary ? "none" : "0 14px 30px -8px rgba(124, 58, 237, 0.6)")};
+    cursor: not-allowed;
+    transform: none;
   }
 `;
 

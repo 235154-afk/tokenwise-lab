@@ -103,7 +103,7 @@ export const NavBtnLink = styled(Link)`
   padding: 10px 22px;
   color: var(--text);
   outline: none;
-  border: 1px solid #fff;
+  border: 1px solid #E7E0FB;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;

@@ -1,0 +1,27 @@
+export const button = styled.button`
+  && {
+    background: ${({ secondary }) => (secondary ? "#FFFFFF" : "linear-gradient(135deg,#8B5CF6,#4C1D95)")};
+    border: 1.5px solid ${({ secondary }) => (secondary ? "#C4B5FD" : "transparent")};
+    color: ${({ secondary }) => (secondary ? "#4C1D95" : "#FFFFFF")};
+    box-shadow: ${({ secondary }) => (secondary ? "none" : "0 10px 24px -10px rgba(124,58,237,.7)")};
+    font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform .2s, border-color .2s;
+    ${({ fullWidth }) => (fullWidth ? "width: 100%;" : "")}
+  }
+  &&:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: #7C3AED;
+  }
+  &&:disabled {
+    background: #EDE7FF;
+    color: #8B80B3;
+    border: 1.5px solid #E3DAFB;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+`;
+

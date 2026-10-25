@@ -18,7 +18,7 @@ import {
 //   newWalletlink,
   newWalletConnect
 } from '../../connectors';
-import { SUPPORTED_WALLETS, WALLET_NAMES } from '../../constants';
+import { SUPPORTED_WALLETS, WALLET_NAMES, STORAGE_NETWORK_ID } from '../../constants';
 import usePrevious from '../../hooks/usePrevious';
 // import useWindowSize from '../../hooks/useWindowSize';
 // import useWordpressInfo from 'hooks/useWordpressInfo'
@@ -241,7 +241,7 @@ export default function WalletModal(props) {
     //     return wordpressData.wpNetworkIds.includes(chainId)
     //   }
 
-      return true;
+      return Number(chainId) === STORAGE_NETWORK_ID;
     });
 
     setAvailableNetworks(networks);
@@ -341,6 +341,7 @@ export default function WalletModal(props) {
     const isMetamask = window.ethereum && window.ethereum.isMetaMask
     const availableOptions = Object.keys(SUPPORTED_WALLETS).map((key) => {
       const option = SUPPORTED_WALLETS[key]
+      if (option.name === WALLET_NAMES.WALLET_CONNECT) return null
 
       if (option.name !== WALLET_NAMES.METAMASK && currentChainId) {
         const newConnector = returnUpdatedConnector(option)
