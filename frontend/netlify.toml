@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "18.20.4"
+  CI = "false"
+  # Force git to use HTTPS instead of SSH when fetching git-based
+  # npm dependencies (e.g. ethereumjs-abi). Netlify's build servers have
+  # no SSH key configured, so any git+ssh:// URL fails with
+  # "Host key verification failed" unless rewritten to https://.
+  GIT_CONFIG_COUNT = "1"
+  GIT_CONFIG_KEY_0 = "url.https://github.com/.insteadOf"
+  GIT_CONFIG_VALUE_0 = "ssh://git@github.com/"

@@ -1,0 +1,11 @@
+[build]
+  base = "frontend"
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  CI = "false"
+  REACT_APP_networkID = "97"
+  REACT_APP_Native = "BNB"
+  SECRETS_SCAN_ENABLED = "false"
